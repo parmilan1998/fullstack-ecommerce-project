@@ -1,7 +1,43 @@
 import React from "react";
+import SearchBar from "../molecules/SearchBar";
+import { IoMdHeartEmpty } from "react-icons/io";
+import { BsCart3 } from "react-icons/bs";
+import { CiUser } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  return <div>Header</div>;
+  return (
+    <div className="font-poppins">
+      <nav className="flex max-w-screen-xl my-4  mx-auto lg:px-16 justify-between items-center">
+        <div>
+          <h1 className="text-2xl font-bold">Exclusive</h1>
+        </div>
+        <div>
+          <ul className="flex gap-3">
+            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+              <Link to="/">Home</Link>
+            </li>
+            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+              <Link to="/about">About</Link>
+            </li>
+            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+              <Link to="/signup">Sign Up</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex justify-center text-xl items-center gap-6">
+          <SearchBar />
+          <IoMdHeartEmpty />
+          <BsCart3 />
+          <CiUser />
+        </div>
+      </nav>
+      <hr />
+    </div>
+  );
 };
 
 export default Header;

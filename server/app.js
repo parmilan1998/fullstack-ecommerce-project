@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import connectDB from "./src/config/database.js";
+import bodyParser from "body-parser";
 
 const app = express();
 
@@ -16,7 +17,6 @@ import categoryRoute from "./src/routes/category.routes.js";
 import productRoute from "./src/routes/product.routes.js";
 // import orderRoute from "./routes/order.routes.js";
 import userRoute from "./src/routes/user.routes.js";
-import bodyParser from "body-parser";
 // import reviewRoute from "./routes/review.routes.js";
 // import cartRoute from "./routes/cart.routes.js";
 // import paymentRoute from "./routes/payment.routes.js";
