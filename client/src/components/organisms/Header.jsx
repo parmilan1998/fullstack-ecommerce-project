@@ -13,7 +13,7 @@ const Header = () => {
           <h1 className="text-2xl font-bold">Exclusive</h1>
         </div>
         <div>
-          <ul className="flex gap-3">
+          <ul className="lg:flex gap-3 hidden">
             <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/">Home</Link>
             </li>
@@ -28,7 +28,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="flex justify-center text-xl items-center gap-6">
+        <div className="lg:flex hidden justify-center text-xl items-center gap-6">
           <SearchBar />
           <IoMdHeartEmpty />
           <BsCart3 />
