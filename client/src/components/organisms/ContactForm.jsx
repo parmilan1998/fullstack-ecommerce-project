@@ -5,7 +5,7 @@ const ContactForm = () => {
     <div className="flex flex-col py-8 my-8 px-10 shadow rounded font-poppins">
       <div>
         <form>
-          <div className="grid grid-cols-3 gap-3 mb-8">
+          <div className="grid lg:grid-cols-3 md:grid-cols-3 gird-cols-1 gap-3 mb-8">
             <div class="relative">
               <input
                 id="id-b16"
@@ -18,7 +18,7 @@ const ContactForm = () => {
             <div class="relative">
               <input
                 id="id-b16"
-                type="text"
+                type="email"
                 name="id-b16"
                 placeholder="Your Email*"
                 class="relative bg-gray-100 w-full h-10 px-4 pr-12 text-sm transition-all border rounded outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
@@ -27,7 +27,7 @@ const ContactForm = () => {
             <div class="relative">
               <input
                 id="id-b16"
-                type="text"
+                type="tel"
                 name="id-b16"
                 placeholder="Your Phone*"
                 class="relative bg-gray-100 w-full h-10 px-4 pr-12 text-sm transition-all border rounded outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
