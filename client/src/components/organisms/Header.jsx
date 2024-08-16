@@ -10,7 +10,7 @@ const Header = () => {
     <div className="font-poppins">
       <nav className="flex max-w-screen-xl my-4  mx-auto lg:px-16 justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold">Exclusive</h1>
+          <h1 className="text-3xl font-bold">QuickCart</h1>
         </div>
         <div>
           <ul className="lg:flex gap-3 hidden">

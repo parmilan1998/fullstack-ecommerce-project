@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-5 lg:col-span-2">
               <div className="text-center sm:text-left">
-                <p className="text-lg font-medium text-white">Exclusive</p>
+                <p className="text-lg font-medium text-white">QuickCart</p>
 
                 <ul className="mt-8 space-y-4 text-sm">
                   <li>
@@ -60,7 +60,7 @@ const Footer = () => {
                       className="text-gray-100 font-light tracking-wider transition hover:text-gray-100/75"
                       href="#"
                     >
-                      exclusive@gmail.com
+                      quickcart@gmail.com
                     </a>
                   </li>
 

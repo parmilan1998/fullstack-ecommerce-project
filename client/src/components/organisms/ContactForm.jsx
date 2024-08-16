@@ -44,7 +44,7 @@ const ContactForm = () => {
               class="relative w-full px-4 py-2 text-sm bg-gray-100 transition-all border rounded outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
             ></textarea>
           </div>
-          <button className="flex justify-end px-8 py-2 rounded bg-rose-400 text-white">
+          <button className="flex justify-end px-8 py-2 rounded bg-pink-600 text-white">
             Send Message
           </button>
         </form>

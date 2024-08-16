@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoryListSection = () => {
   return (
-    <div>
+    <div className="lg:block hidden">
       <ul className="font-poppins">
         <li className="flex items-center gap-4 px-4 py-1">
           <div className="flex min-h-[2rem] flex-1 flex-col items-start justify-center gap-0">

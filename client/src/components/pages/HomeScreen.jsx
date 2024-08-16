@@ -5,6 +5,8 @@ import BrowseByCategory from "../organisms/BrowseByCategory";
 import BestSellingProducts from "../organisms/BestSellingProducts";
 import ExploreProducts from "../organisms/ExploreProducts";
 import NewArrival from "../organisms/NewArrival";
+import Services from "../organisms/Services";
+import GoTopButton from "../atoms/GoTopButton";
 
 const HomeScreen = () => {
   return (
@@ -14,7 +16,11 @@ const HomeScreen = () => {
       <BrowseByCategory />
       <BestSellingProducts />
       <ExploreProducts />
-      <NewArrival />
+      {/* <NewArrival /> */}
+      <Services />
+      <div className="flex justify-end items-end right-0">
+        <GoTopButton />
+      </div>
     </div>
   );
 };
