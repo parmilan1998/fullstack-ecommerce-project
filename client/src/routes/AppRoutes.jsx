@@ -7,6 +7,8 @@ import LoginScreen from "../components/pages/LoginScreen";
 import SignupScreen from "../components/pages/SignupScreen";
 import RootLayout from "../layouts/RootLayout";
 import ErrorScreen from "../components/pages/ErrorScreen";
+import WishListScreen from "../components/pages/WishListScreen";
+import CartScreen from "../components/pages/CartScreen";
 
 const AppRoutes = () => {
   return (
@@ -20,6 +22,8 @@ const AppRoutes = () => {
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
             <Route path="*" element={<ErrorScreen />} />
+            <Route path="/wishlist" element={<WishListScreen />} />
+            <Route path="/cart" element={<CartScreen />} />
           </Route>
         </Routes>
       </Router>

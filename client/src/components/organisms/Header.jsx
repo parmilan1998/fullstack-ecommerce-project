@@ -30,7 +30,9 @@ const Header = () => {
         </div>
         <div className="lg:flex hidden justify-center text-xl items-center gap-6">
           <SearchBar />
-          <IoMdHeartEmpty />
+          <Link to="/wishlist">
+            <IoMdHeartEmpty />
+          </Link>
           <BsCart3 />
           <CiUser />
         </div>

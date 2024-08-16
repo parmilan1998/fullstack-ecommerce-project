@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import RatingStar from "../atoms/RatingStar";
-import WishListButton from "../atoms/WishListButton";
-import ViewProductButton from "../atoms/ViewProductButton";
+import CardButton from "../atoms/CardButton";
+import { FaRegHeart } from "react-icons/fa";
+import { HiOutlineEye } from "react-icons/hi";
 
 const ProductCard = ({
+  id,
   image,
   productName,
   price,
@@ -11,6 +13,11 @@ const ProductCard = ({
   ratingCount,
 }) => {
   const [visible, setVisible] = useState(false);
+
+  const handleWishListClick = () => {
+    console.log("Add Wishlist");
+  };
+
   return (
     <div
       className="font-poppins mx-auto"
@@ -19,8 +26,8 @@ const ProductCard = ({
     >
       <div className="bg-slate-200 relative flex flex-col rounded justify-center w-64 h-56">
         <div className="top-2 right-0 absolute cursor-pointer">
-          <WishListButton />
-          <ViewProductButton />
+          <CardButton onClick={handleWishListClick} name={<FaRegHeart />} />
+          <CardButton name={<HiOutlineEye />} />
         </div>
         <div className=" flex-grow flex items-center">
           <img src={image} alt="Product" className="object-cover mx-auto" />
@@ -41,7 +48,9 @@ const ProductCard = ({
         </div>
         <div className="flex gap-2">
           <RatingStar />
-          <span className="text-sm text-gray-400">({ratingCount})</span>
+          {ratingCount && (
+            <span className="text-sm text-gray-400">({ratingCount})</span>
+          )}
         </div>
       </div>
     </div>

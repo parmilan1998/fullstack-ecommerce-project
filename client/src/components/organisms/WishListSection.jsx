@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import Heading from "../atoms/Heading";
-import Title from "../atoms/Title";
-import ProductButton from "../atoms/ProductButton";
 import ProductCard from "../molecules/ProductCard";
+import { Link } from "react-router-dom";
 import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
 
-const BestSellingProducts = () => {
-  const bestSellingProductsInfo = [
+const WishListSection = () => {
+  const wishlistProductsInfo = [
     {
       id: 1,
       image: CoatImage,
@@ -43,24 +41,34 @@ const BestSellingProducts = () => {
       ratingCount: "65",
     },
   ];
+  const [wishListItems, setWishListItems] = useState([]);
+
   return (
-    <div className="py-6">
-      <div className="flex justify-between">
-        <div>
-          <Heading title="This Month" />
-          <Title props="Best Selling Products" />
-        </div>
-        <div className="flex items-center lg:my-6">
-          <ProductButton name="View All" />
-        </div>
+    <div className="wishlist-section font-poppins">
+      <div className="flex justify-between items-center py-4">
+        <h2 className="text-xl font-bold tracking-wider">
+          Wishlist(8)
+          {/* ({wishListItems.length}) */}
+        </h2>
+        <Link to="/" className="inline-block text-blue-500 hover:underline">
+          Back to Products
+        </Link>
       </div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
-        {bestSellingProductsInfo.map((item) => (
+      {/* {wishListItems.length === 0 ? (
+        <p className="text-center py-12 text-red-500">
+          Your wishlist is empty.
+        </p>
+      ) : ( */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-8">
+        {/* {wishListItems.map((item) => ( */}
+        {wishlistProductsInfo.map((item) => (
           <ProductCard key={item.id} {...item} />
         ))}
+        {/* ))} */}
       </div>
+      {/* )} */}
     </div>
   );
 };
 
-export default BestSellingProducts;
+export default WishListSection;
