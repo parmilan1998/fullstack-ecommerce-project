@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <div className="font-poppins">
       <nav className="flex max-w-screen-xl my-4  mx-auto lg:px-16 justify-between items-center">
-        <div>
+        <Link to="/">
           <h1 className="text-3xl font-bold">QuickCart</h1>
-        </div>
+        </Link>
         <div>
           <ul className="lg:flex gap-3 hidden">
             <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">

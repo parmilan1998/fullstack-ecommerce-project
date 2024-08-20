@@ -1,6 +1,7 @@
 import React from "react";
 import Heading from "../atoms/Heading";
 import Title from "../atoms/Title";
+import ProductCard from "../molecules/ProductCard";
 import DogFoodImage from "../../assets/dogFood.png";
 import CameraImage from "../../assets/camera.png";
 import BootsImage from "../../assets/boots.png";
@@ -9,11 +10,14 @@ import CurologyImage from "../../assets/curology.png";
 import GamePadImage from "../../assets/gamePad.png";
 import JacketImage from "../../assets/jacket.png";
 import LaptopImage from "../../assets/laptop.png";
-import ProductCard from "../molecules/ProductCard";
-import ProductButton from "../atoms/ProductButton";
+import CoatImage from "../../assets/coat.png";
+import BagImage from "../../assets/bag.png";
+import CoolerImage from "../../assets/cooler.png";
+import BookselfImage from "../../assets/bookself.png";
+import Pagination from "../molecules/Pagination";
 import { Link } from "react-router-dom";
 
-const ExploreProducts = () => {
+const Product = () => {
   const exploreProductsInfo = [
     {
       id: 1,
@@ -79,9 +83,41 @@ const ExploreProducts = () => {
       discountPice: "$260",
       ratingCount: "65",
     },
+    {
+      id: 9,
+      image: CoatImage,
+      productName: "The north coat",
+      price: "$360",
+      discountPice: "$260",
+      ratingCount: "65",
+    },
+    {
+      id: 10,
+      image: BagImage,
+      productName: "Gucci duffle bag",
+      price: "$1160",
+      discountPice: "$960",
+      ratingCount: "75",
+    },
+    {
+      id: 11,
+      image: CoolerImage,
+      productName: "RGB liquid CPU Cooler",
+      price: "$170",
+      discountPice: "$160",
+      ratingCount: "65",
+    },
+    {
+      id: 12,
+      image: BookselfImage,
+      productName: "Small BookSelf",
+      price: "$400",
+      discountPice: "$360",
+      ratingCount: "65",
+    },
   ];
   return (
-    <div className="py-6">
+    <div className="py-6 font-poppins">
       <div>
         <Heading title="Our Products" />
         <Title props="Explore Our Products" />
@@ -93,11 +129,11 @@ const ExploreProducts = () => {
           </Link>
         ))}
       </div>
-      <Link to="/products" className="flex justify-center items-center py-6">
-        <ProductButton name="View All Products" />
-      </Link>
+      <div className="mx-auto flex justify-center items-center py-4">
+        <Pagination />
+      </div>
     </div>
   );
 };
 
-export default ExploreProducts;
+export default Product;

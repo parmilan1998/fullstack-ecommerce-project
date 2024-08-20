@@ -7,6 +7,7 @@ import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
+import { Link } from "react-router-dom";
 
 const BestSellingProducts = () => {
   const bestSellingProductsInfo = [
@@ -56,7 +57,9 @@ const BestSellingProducts = () => {
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {bestSellingProductsInfo.map((item) => (
-          <ProductCard key={item.id} {...item} />
+          <Link to={`/products/${item.id}`} key={item.id}>
+            <ProductCard {...item} />
+          </Link>
         ))}
       </div>
     </div>
