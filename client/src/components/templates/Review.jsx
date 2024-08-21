@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewCard from "../molecules/ReviewCard";
+import ReviewCard from "../organisms/ReviewCard";
 import Title from "../atoms/Title";
 import { Link } from "react-router-dom";
 

@@ -43,6 +43,7 @@ export default function Pagination() {
               1
             </a>
           </li>
+
           <li>
             <a
               href="javascript:void(0)"
@@ -52,6 +53,7 @@ export default function Pagination() {
               2
             </a>
           </li>
+
           <li>
             <a
               href="javascript:void(0)"
@@ -62,6 +64,7 @@ export default function Pagination() {
               3
             </a>
           </li>
+
           <li>
             <a
               href="javascript:void(0)"
@@ -71,6 +74,7 @@ export default function Pagination() {
               4
             </a>
           </li>
+
           <li>
             <a
               href="javascript:void(0)"
@@ -80,6 +84,7 @@ export default function Pagination() {
               5
             </a>
           </li>
+
           <li>
             <a
               href="javascript:void(0)"

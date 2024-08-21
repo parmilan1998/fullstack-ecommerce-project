@@ -1,5 +1,5 @@
 import React from "react";
-import ServiceSection from "../molecules/ServiceSection";
+import ServiceSection from "../organisms/ServiceSection";
 import { TbTruckDelivery } from "react-icons/tb";
 import { PiHeadsetFill } from "react-icons/pi";
 import { GiMoneyStack } from "react-icons/gi";

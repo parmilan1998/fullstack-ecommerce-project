@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Heading from "../atoms/Heading";
+import Heading from "../molecules/Heading";
 import Title from "../atoms/Title";
 import ProductButton from "../atoms/ProductButton";
-import ProductCard from "../molecules/ProductCard";
 import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
 import { Link } from "react-router-dom";
+import ProductCard from "../organisms/ProductCard";
 
 const BestSellingProducts = () => {
   const bestSellingProductsInfo = [

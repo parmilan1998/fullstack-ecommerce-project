@@ -1,5 +1,5 @@
 import React from "react";
-import Heading from "../atoms/Heading";
+import Heading from "../molecules/Heading";
 import Title from "../atoms/Title";
 import DogFoodImage from "../../assets/dogFood.png";
 import CameraImage from "../../assets/camera.png";
@@ -9,9 +9,9 @@ import CurologyImage from "../../assets/curology.png";
 import GamePadImage from "../../assets/gamePad.png";
 import JacketImage from "../../assets/jacket.png";
 import LaptopImage from "../../assets/laptop.png";
-import ProductCard from "../molecules/ProductCard";
 import ProductButton from "../atoms/ProductButton";
 import { Link } from "react-router-dom";
+import ProductCard from "../organisms/ProductCard";
 
 const ExploreProducts = () => {
   const exploreProductsInfo = [

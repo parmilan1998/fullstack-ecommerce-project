@@ -1,9 +1,9 @@
 import React from "react";
 import ProductImageGallery from "../organisms/ProductImageGallery";
 import SingleProductInfo from "../organisms/SingleProductInfo";
-import RelatedItem from "../organisms/RelatedItem";
+import RelatedItem from "../templates/RelatedItem";
 import Title from "../atoms/Title";
-import Review from "../organisms/Review";
+import Review from "../templates/Review";
 
 const ProductDetailsScreen = ({ item }) => {
   return (

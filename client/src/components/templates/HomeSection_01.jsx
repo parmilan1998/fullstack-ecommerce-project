@@ -1,6 +1,6 @@
 import React from "react";
-import CategoryListSection from "./CategoryListSection";
-import HomeCarousel from "../molecules/HomeCarousel";
+import CategoryListSection from "../organisms/CategoryListSection";
+import HomeCarousel from "../organisms/HomeCarousel";
 
 const HomeSection_01 = () => {
   return (

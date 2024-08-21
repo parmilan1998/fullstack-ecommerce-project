@@ -1,12 +1,12 @@
 import React from "react";
-import HomeSection_01 from "../organisms/HomeSection_01";
-import FlashSales from "../organisms/FlashSales";
-import BrowseByCategory from "../organisms/BrowseByCategory";
-import BestSellingProducts from "../organisms/BestSellingProducts";
-import ExploreProducts from "../organisms/ExploreProducts";
+import FlashSales from "../templates/FlashSales";
+import BrowseByCategory from "../templates/BrowseByCategory";
+import BestSellingProducts from "../templates/BestSellingProducts";
+import ExploreProducts from "../templates/ExploreProducts";
 import NewArrival from "../organisms/NewArrival";
-import Services from "../organisms/Services";
+import Services from "../templates/Services";
 import GoTopButton from "../atoms/GoTopButton";
+import HomeSection_01 from "../templates/HomeSection_01";
 
 const HomeScreen = () => {
   return (

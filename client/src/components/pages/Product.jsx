@@ -1,7 +1,6 @@
 import React from "react";
-import Heading from "../atoms/Heading";
+import Heading from "../molecules/Heading";
 import Title from "../atoms/Title";
-import ProductCard from "../molecules/ProductCard";
 import DogFoodImage from "../../assets/dogFood.png";
 import CameraImage from "../../assets/camera.png";
 import BootsImage from "../../assets/boots.png";
@@ -14,8 +13,9 @@ import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
-import Pagination from "../molecules/Pagination";
+import Pagination from "../organisms/Pagination";
 import { Link } from "react-router-dom";
+import ProductCard from "../organisms/ProductCard";
 
 const Product = () => {
   const exploreProductsInfo = [

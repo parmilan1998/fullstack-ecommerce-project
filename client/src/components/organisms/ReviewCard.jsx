@@ -1,5 +1,5 @@
 import React from "react";
-import RatingStar from "../atoms/RatingStar";
+import RatingStar from "../molecules/RatingStar";
 
 const ReviewCard = ({ customer, review }) => {
   return (

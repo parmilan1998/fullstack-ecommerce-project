@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import RatingStar from "../atoms/RatingStar";
 import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineEye } from "react-icons/hi";
+import RatingStar from "../molecules/RatingStar";
 
 const ProductCard = ({
   id,

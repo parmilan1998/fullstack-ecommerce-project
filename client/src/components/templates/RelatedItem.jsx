@@ -1,15 +1,13 @@
 import React from "react";
-import Heading from "../atoms/Heading";
-import Title from "../atoms/Title";
-import ProductCard from "../molecules/ProductCard";
+import { Link } from "react-router-dom";
 import PlayImage from "../../assets/play.png";
 import keyBoardImage from "../../assets/keyboard.png";
 import televisionImage from "../../assets/television.png";
-import chairImage from "../../assets/chair.png";
-import ProductButton from "../atoms/ProductButton";
-import { Link } from "react-router-dom";
+import CoolerImage from "../../assets/cooler.png";
+import Heading from "../molecules/Heading";
+import ProductCard from "../organisms/ProductCard";
 
-const HomeSection_02 = () => {
+const RelatedItem = () => {
   const flashSalesInfo = [
     {
       id: 1,
@@ -37,18 +35,17 @@ const HomeSection_02 = () => {
     },
     {
       id: 4,
-      image: chairImage,
-      productName: "S-Series Comfort Chair",
-      price: "$375",
-      discountPice: "$400",
-      ratingCount: "99",
+      image: CoolerImage,
+      productName: "RGB liquid CPU Cooler",
+      price: "$170",
+      discountPice: "$160",
+      ratingCount: "65",
     },
   ];
   return (
-    <div className="py-6">
-      <div className="flex flex-col">
-        <Heading title="Today" />
-        <Title props="Flash Sales" />
+    <div className="mx-3">
+      <div className="pt-4">
+        <Heading title="Related Items" />
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {flashSalesInfo.map((item) => (
@@ -57,11 +54,8 @@ const HomeSection_02 = () => {
           </Link>
         ))}
       </div>
-      <div className="flex justify-center items-center py-6">
-        <ProductButton name="View All Products" />
-      </div>
     </div>
   );
 };
 
-export default HomeSection_02;
+export default RelatedItem;

@@ -1,11 +1,11 @@
 import React from "react";
-import RatingStar from "../atoms/RatingStar";
-import ProductColors from "../molecules/ProductColors";
+import RatingStar from "../molecules/RatingStar";
+import ProductColors from "./ProductColors";
 import ProductSize from "./ProductSize";
 import ProductButton from "../atoms/ProductButton";
 import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
-import DeliveryInfo from "../molecules/DeliveryInfo";
+import DeliveryInfo from "./DeliveryInfo";
 
 const SingleProductInfo = () => {
   return (

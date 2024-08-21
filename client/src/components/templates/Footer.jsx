@@ -1,6 +1,6 @@
 import React from "react";
-import Newsletter from "./Newsletter";
-import FooterBottom from "../molecules/FooterBottom";
+import Newsletter from "../organisms/Newsletter";
+import FooterBottom from "../organisms/FooterBottom";
 import SocialShareButtons from "../molecules/SocialShareButtons";
 
 const Footer = () => {

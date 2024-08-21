@@ -1,7 +1,7 @@
 import React from "react";
-import Heading from "../atoms/Heading";
+import Heading from "../molecules/Heading";
 import Title from "../atoms/Title";
-import CategorySlider from "../molecules/CategorySlider";
+import CategorySlider from "../organisms/CategorySlider";
 
 const HomeSection_03 = () => {
   return (

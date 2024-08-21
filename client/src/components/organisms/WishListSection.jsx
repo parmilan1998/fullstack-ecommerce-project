@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ProductCard from "../molecules/ProductCard";
 import { Link } from "react-router-dom";
 import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
+import ProductCard from "./ProductCard";
 
 const WishListSection = () => {
   const wishlistProductsInfo = [
