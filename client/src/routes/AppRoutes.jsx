@@ -9,6 +9,7 @@ import RootLayout from "../layouts/RootLayout";
 import ErrorScreen from "../components/pages/ErrorScreen";
 import WishListScreen from "../components/pages/WishListScreen";
 import CartScreen from "../components/pages/CartScreen";
+import AccountScreen from "../components/pages/AccountScreen";
 import Product from "../components/pages/Product";
 import ProductDetailsScreen from "../components/pages/ProductDetailsScreen";
 
@@ -28,6 +29,8 @@ const AppRoutes = () => {
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/products" element={<Product />} />
             <Route path="/products/:id" element={<ProductDetailsScreen />} />
+            <Route path="/cart" element={<CartScreen />} />
+            <Route path="/account" element={<AccountScreen />} />
           </Route>
         </Routes>
       </Router>

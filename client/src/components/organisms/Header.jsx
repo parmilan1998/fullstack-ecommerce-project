@@ -33,8 +33,12 @@ const Header = () => {
           <Link to="/wishlist">
             <IoMdHeartEmpty />
           </Link>
-          <BsCart3 />
-          <CiUser />
+          <Link to="/cart">
+            <BsCart3 />
+          </Link>
+          <Link to="/account">
+            <CiUser />
+          </Link>
         </div>
       </nav>
       <hr />
