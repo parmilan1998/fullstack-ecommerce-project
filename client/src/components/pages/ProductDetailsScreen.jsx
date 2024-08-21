@@ -3,6 +3,7 @@ import ProductImageGallery from "../organisms/ProductImageGallery";
 import SingleProductInfo from "../organisms/SingleProductInfo";
 import RelatedItem from "../organisms/RelatedItem";
 import Title from "../atoms/Title";
+import Review from "../organisms/Review";
 
 const ProductDetailsScreen = ({ item }) => {
   return (
@@ -18,6 +19,7 @@ const ProductDetailsScreen = ({ item }) => {
           <SingleProductInfo />
         </div>
       </div>
+      <Review />
       <RelatedItem />
     </div>
   );

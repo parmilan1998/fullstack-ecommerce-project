@@ -12,6 +12,7 @@ import CartScreen from "../components/pages/CartScreen";
 import AccountScreen from "../components/pages/AccountScreen";
 import Product from "../components/pages/Product";
 import ProductDetailsScreen from "../components/pages/ProductDetailsScreen";
+import ForgotPassword from "../components/pages/ForgotPassword";
 
 const AppRoutes = () => {
   return (
@@ -31,6 +32,7 @@ const AppRoutes = () => {
             <Route path="/products/:id" element={<ProductDetailsScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/account" element={<AccountScreen />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
           </Route>
         </Routes>
       </Router>
