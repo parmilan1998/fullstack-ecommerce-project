@@ -23,8 +23,7 @@ const AppRoutes = () => {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/about" element={<AboutScreen />} />
             <Route path="/contact" element={<ContactScreen />} />
-            <Route path="/login" element={<LoginScreen />} />
-            <Route path="/signup" element={<SignupScreen />} />
+
             <Route path="*" element={<ErrorScreen />} />
             <Route path="/wishlist" element={<WishListScreen />} />
             <Route path="/cart" element={<CartScreen />} />
@@ -34,6 +33,8 @@ const AppRoutes = () => {
             <Route path="/account" element={<AccountScreen />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Route>
+          <Route path="/login" element={<LoginScreen />} />
+          <Route path="/signup" element={<SignupScreen />} />
         </Routes>
       </Router>
     </>
