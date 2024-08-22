@@ -16,6 +16,7 @@ import BookselfImage from "../../assets/bookself.png";
 import Pagination from "../organisms/Pagination";
 import { Link } from "react-router-dom";
 import ProductCard from "../organisms/ProductCard";
+import Breadcrumbs from "../organisms/Breadcrumbs";
 
 const Product = () => {
   const exploreProductsInfo = [
@@ -118,6 +119,7 @@ const Product = () => {
   ];
   return (
     <div className="py-6 font-poppins">
+      <Breadcrumbs />
       <div>
         <Heading title="Our Products" />
         <Title props="Explore Our Products" />

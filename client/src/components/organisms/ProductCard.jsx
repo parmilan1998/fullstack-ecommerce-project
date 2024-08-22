@@ -3,6 +3,8 @@ import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineEye } from "react-icons/hi";
 import RatingStar from "../molecules/RatingStar";
+import { useLocation } from "react-router-dom";
+import { MdDelete } from "react-icons/md";
 
 const ProductCard = ({
   id,
@@ -12,7 +14,9 @@ const ProductCard = ({
   discountPice,
   ratingCount,
 }) => {
-  const [visible, setVisible] = useState(false);
+  const location = useLocation();
+  const isWishlist = location.pathname === "/wishlist";
+  const [visible, setVisible] = useState(isWishlist);
 
   const handleWishListClick = () => {
     console.log("Add Wishlist");
@@ -21,13 +25,19 @@ const ProductCard = ({
   return (
     <div
       className="font-poppins mx-auto"
-      onMouseEnter={() => setVisible(true)}
-      onMouseLeave={() => setVisible(false)}
+      onMouseEnter={() => !isWishlist && setVisible(true)}
+      onMouseLeave={() => !isWishlist && setVisible(false)}
     >
       <div className="bg-slate-200 relative flex flex-col rounded justify-center w-64 h-56">
         <div className="top-2 right-0 absolute cursor-pointer">
-          <CardButton onClick={handleWishListClick} name={<FaRegHeart />} />
-          <CardButton name={<HiOutlineEye />} />
+          {!isWishlist ? (
+            <>
+              <CardButton onClick={handleWishListClick} name={<FaRegHeart />} />
+              <CardButton name={<HiOutlineEye />} />
+            </>
+          ) : (
+            <CardButton name={<MdDelete color="red" />} />
+          )}
         </div>
         <div className=" flex-grow flex items-center">
           <img src={image} alt="Product" className="object-cover mx-auto" />

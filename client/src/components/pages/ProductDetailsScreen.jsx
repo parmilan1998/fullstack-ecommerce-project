@@ -1,27 +1,30 @@
-import React from "react";
-import ProductImageGallery from "../organisms/ProductImageGallery";
-import SingleProductInfo from "../organisms/SingleProductInfo";
-import RelatedItem from "../templates/RelatedItem";
+import React, { Suspense, lazy } from "react";
 import Title from "../atoms/Title";
-import Review from "../templates/Review";
+
+const RelatedItem = lazy(() => import("../templates/RelatedItem"));
+const Review = lazy(() => import("../templates/Review"));
+const SingleProductDetails = lazy(() =>
+  import("../templates/SingleProductDetails")
+);
 
 const ProductDetailsScreen = ({ item }) => {
   return (
-    <div className="mx-auto">
-      <div className="py-3">
-        <Title props="Product Details" />
-      </div>
-      <div className="grid grid-cols-7 gap-6">
-        <div className="col-span-4">
-          <ProductImageGallery />
+    <Suspense
+      fallback={
+        <div style={{ textAlign: "center", padding: "20px", fontSize: "24px" }}>
+          Loading...
         </div>
-        <div className="col-span-3">
-          <SingleProductInfo />
+      }
+    >
+      <div className="mx-auto">
+        <div className="py-3">
+          <Title text="Product Details" />
         </div>
+        <SingleProductDetails item={item} />
+        <Review />
+        <RelatedItem />
       </div>
-      <Review />
-      <RelatedItem />
-    </div>
+    </Suspense>
   );
 };
 

@@ -20,6 +20,7 @@ import userRoute from "./src/routes/user.routes.js";
 // import reviewRoute from "./routes/review.routes.js";
 // import cartRoute from "./routes/cart.routes.js";
 // import paymentRoute from "./routes/payment.routes.js";
+import FeedbackRoute from "./src/routes/feedback.routes.js";
 
 // use routes
 app.use("/api/v1/category", categoryRoute);
@@ -29,6 +30,7 @@ app.use("/api/v1/product", productRoute);
 // app.use("/api/v1/cart", cartRoute);
 app.use("/api/v1/user", userRoute);
 // app.use("/api/v1/review", reviewRoute);
+app.use("/api/v1/feedback", FeedbackRoute);
 
 connectDB()
   .then(() => {
