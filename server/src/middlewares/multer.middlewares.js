@@ -23,3 +23,7 @@ export const categoryUpload = multer({
 export const productUpload = multer({
   storage: createStorage("./public/product"),
 });
+
+export const userUpload = multer({
+  storage: createStorage("./public/user"),
+});

@@ -7,21 +7,29 @@ import generateToken from "../utils/token.js";
 export const registerUser = asyncHandler(async (req, res) => {
   const { username, email, password, role } = req.body;
 
-  // Check user is already registered
-  const existingUser = await User.findOne({ email });
-  if (existingUser) {
-    return res.status(400).json({ message: "User already exists" });
+  // TODO: Validation
+  if ([username, email, password].some((field) => field?.trim() === "")) {
+    return res.status(400).json({ message: "All fields are required" });
   }
 
-  // Hash the password
+  // TODO: Check user is already registered
+  const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+  if (existingUser) {
+    return res
+      .status(400)
+      .json({ message: "User with username or email already exists" });
+  }
+
+  //TODO:  Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  // Create a new user
+  //TODO: Create a new user
   const user = await User.create({
     username,
     email,
     password: hashedPassword,
     role: role || "user",
+    avatar: req.file?.filename,
   });
 
   res.status(201).json({
@@ -31,6 +39,7 @@ export const registerUser = asyncHandler(async (req, res) => {
     email: user.email,
     password: user.password,
     role: user.role,
+    avatar: user.avatar,
   });
 });
 

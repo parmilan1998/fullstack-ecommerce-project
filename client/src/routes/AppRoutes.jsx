@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomeScreen from "../components/pages/HomeScreen";
 import AboutScreen from "../components/pages/AboutScreen";
 import ContactScreen from "../components/pages/ContactScreen";
-import LoginScreen from "../components/pages/LoginScreen";
-import SignupScreen from "../components/pages/SignupScreen";
 import RootLayout from "../layouts/RootLayout";
 import ErrorScreen from "../components/pages/ErrorScreen";
 import WishListScreen from "../components/pages/WishListScreen";
@@ -32,8 +30,6 @@ const AppRoutes = () => {
             <Route path="/account" element={<AccountScreen />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
           </Route>
-          <Route path="/login" element={<LoginScreen />} />
-          <Route path="/signup" element={<SignupScreen />} />
         </Routes>
       </Router>
     </>

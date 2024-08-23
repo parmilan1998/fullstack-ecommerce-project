@@ -22,6 +22,10 @@ const userSchema = new Schema(
       default: "user",
       enum: ["user", "admin", "employee"],
     },
+    avatar: {
+      type: String,
+      default: "../../public/avatar.png",
+    },
   },
   {
     timestamps: true,

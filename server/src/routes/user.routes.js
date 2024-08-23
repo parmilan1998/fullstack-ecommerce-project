@@ -6,12 +6,13 @@ import {
   getUserInfo,
   updateUserProfile,
   deleteUser,
-} from "../controllers/user.controller.js";
+} from "../controllers/user.controllers.js";
 import { protect } from "../middlewares/auth.middlewares.js";
+import { userUpload } from "../middlewares/multer.middlewares.js";
 
 const router = express.Router();
 
-router.post("/register", registerUser);
+router.post("/register", userUpload.single("avatar"), registerUser);
 router.post("/login", loginUser);
 router.post("/logout", protect, logoutUser);
 router.get("/profile", protect, getUserInfo);
