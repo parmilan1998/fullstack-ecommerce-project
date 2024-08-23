@@ -119,7 +119,6 @@ const Product = () => {
   ];
   return (
     <div className="py-6 font-poppins">
-      <Breadcrumbs />
       <div>
         <Heading title="Our Products" />
         <Title props="Explore Our Products" />
