@@ -7,7 +7,7 @@ import {
   updateUserProfile,
   deleteUser,
 } from "../controllers/user.controller.js";
-import { protect } from "../middleware/authMiddleware.js";
+import { protect } from "../middlewares/auth.middlewares.js";
 
 const router = express.Router();
 

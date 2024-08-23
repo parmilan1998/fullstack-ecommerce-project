@@ -11,7 +11,15 @@ export const createCategory = asyncHandler(async (req, res) => {
       .json({ message: "categoryName and description are required" });
   }
 
-  const category = await Category.create({ categoryName, description });
+  if (!req.file) {
+    return res.status(400).json({ message: "Image file is required" });
+  }
+
+  const category = await Category.create({
+    categoryName,
+    description,
+    image: req.file.filename,
+  });
 
   res.status(201).json({ category: category });
 });

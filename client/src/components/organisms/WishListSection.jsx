@@ -44,7 +44,7 @@ const WishListSection = () => {
   const [wishListItems, setWishListItems] = useState([]);
 
   return (
-    <div className="wishlist-section font-poppins">
+    <div className="wishlist-section font-poppins py-4">
       <div className="flex justify-between items-center py-4">
         <h2 className="text-xl font-bold tracking-wider">
           Wishlist(8)

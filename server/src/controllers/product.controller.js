@@ -2,7 +2,7 @@ import User from "../models/user.models.js";
 import Product from "../models/product.models.js";
 import asyncHandler from "express-async-handler";
 import Category from "../models/category.models.js";
-import cloudinary from "../utils/Cloudinary.js";
+import cloudinary from "../utils/cloudinary.js";
 
 // POST - http://localhost:8080/api/v1/product
 export const createProduct = asyncHandler(async (req, res) => {
