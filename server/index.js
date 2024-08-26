@@ -8,14 +8,19 @@ const app = express();
 
 const PORT = process.env.PORT || 9000;
 
-// middleware
+//TODO: middleware
 app.use(bodyParser.json({ urlencoded: true }));
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-// import routes
+// TODO: sample api
+app.use("/", (req, res) => {
+  res.send("Welcome to the Ecommerce Shopping API!🚀🚀🚀");
+});
+
+//TODO: import routes
 import categoryRoute from "./src/routes/category.routes.js";
 import productRoute from "./src/routes/product.routes.js";
 // import orderRoute from "./routes/order.routes.js";
@@ -25,7 +30,7 @@ import userRoute from "./src/routes/user.routes.js";
 // import paymentRoute from "./routes/payment.routes.js";
 import FeedbackRoute from "./src/routes/feedback.routes.js";
 
-// use routes
+//TODO: use routes
 app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 // app.use("/api/v1/order", orderRoute);
