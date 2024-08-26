@@ -16,8 +16,8 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 // TODO: sample api
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to the Ecommerce Shopping API!🚀🚀🚀" });
+app.use("/", (req, res) => {
+  res.send("Welcome to the Ecommerce Shopping API!🚀🚀🚀");
 });
 
 //TODO: import routes
