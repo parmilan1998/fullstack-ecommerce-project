@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import SearchBar from "../molecules/SearchBar";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 import { CiUser } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import SignUpForm from "./SignUpForm";
-import { Modal } from "antd";
 import AuthModal from "./AuthModal";
 import AuthForm from "./AuthForm";
-import { RiMenuUnfold2Line, RiMenuUnfoldLine } from "react-icons/ri";
+import { RiMenuUnfold2Line } from "react-icons/ri";
+import ToggleMenu from "./ToggleMenu";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="font-poppins">
       <nav className="flex max-w-screen-xl my-4 px-4 mx-auto lg:px-16 justify-between items-center">
@@ -51,11 +54,19 @@ const Header = () => {
               <AuthModal name="Log In" AuthForm={AuthForm} />
             </div>
           </div>
-          <button className="flex md:hidden justify-center items-center">
+          <button
+            onClick={toggleMenu}
+            className="flex md:hidden justify-center items-center"
+          >
             <RiMenuUnfold2Line size={28} />
           </button>
         </div>
       </nav>
+      {isOpen && (
+        <>
+          <ToggleMenu setIsOpen={setIsOpen} />
+        </>
+      )}
       <hr />
     </div>
   );
