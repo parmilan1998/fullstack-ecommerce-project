@@ -4,7 +4,7 @@ import CoatImage from "../../assets/coat.png";
 import BagImage from "../../assets/bag.png";
 import CoolerImage from "../../assets/cooler.png";
 import BookselfImage from "../../assets/bookself.png";
-import ProductCard from "./ProductCard";
+import ProductCard from "../organisms/ProductCard";
 
 const WishListSection = () => {
   const wishlistProductsInfo = [
@@ -44,7 +44,7 @@ const WishListSection = () => {
   const [wishListItems, setWishListItems] = useState([]);
 
   return (
-    <div className="wishlist-section font-poppins py-4">
+    <div className="wishlist-section font-poppins py-4 lg:px-0 md:px-12 px-4">
       <div className="flex justify-between items-center py-4">
         <h2 className="text-xl font-bold tracking-wider">
           Wishlist(8)
@@ -59,7 +59,7 @@ const WishListSection = () => {
           Your wishlist is empty.
         </p>
       ) : ( */}
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-8">
         {/* {wishListItems.map((item) => ( */}
         {wishlistProductsInfo.map((item) => (
           <ProductCard key={item.id} {...item} />

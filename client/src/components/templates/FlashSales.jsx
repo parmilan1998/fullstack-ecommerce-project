@@ -46,13 +46,17 @@ const HomeSection_02 = () => {
   ];
   return (
     <div className="py-6">
-      <div className="flex flex-col">
+      <div className="flex flex-col lg:px-0 md:px-14">
         <Heading title="Today" />
         <Title props="Flash Sales" />
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {flashSalesInfo.map((item) => (
-          <Link to={`/products/${item.id}`} key={item.id}>
+          <Link
+            className="flex justify-center items-center"
+            to={`/products/${item.id}`}
+            key={item.id}
+          >
             <ProductCard {...item} />
           </Link>
         ))}

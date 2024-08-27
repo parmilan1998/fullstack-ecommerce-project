@@ -40,7 +40,7 @@ const Review = () => {
   ];
   return (
     <div>
-      <section className="font-poppins mx-auto">
+      <section className="font-poppins lg:mx-auto md:mx-16 mx-4">
         <div className="mx-auto py-6 lg:pl-3 lg:pr-8 lg:py-10">
           <div className="md:flex md:items-end md:justify-between">
             <Title props="Reviews from our customers" />
@@ -67,7 +67,7 @@ const Review = () => {
             </Link>
           </div>
 
-          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {reviewsInfo.map((item) => (
               <ReviewCard key={item.id} {...item} />
             ))}

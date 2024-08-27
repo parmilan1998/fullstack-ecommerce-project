@@ -13,8 +13,6 @@ export const createProduct = asyncHandler(async (req, res) => {
     categoryName,
   } = req.body;
 
-  console.log("Body", req.body);
-
   if (
     !productName ||
     !productDescription ||
@@ -24,7 +22,6 @@ export const createProduct = asyncHandler(async (req, res) => {
   ) {
     return res.status(400).json({ message: "All fields are required" });
   }
-  console.log({ categoryName });
 
   const category = await Category.findOne({ categoryName });
   console.log("Category: ", category);

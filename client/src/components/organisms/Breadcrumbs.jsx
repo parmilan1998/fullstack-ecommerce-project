@@ -6,7 +6,7 @@ const Breadcrumbs = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <nav className="font-poppins">
+    <nav className="font-poppins lg:px-0 md:px-12 px-4">
       <Link
         to="/"
         className={

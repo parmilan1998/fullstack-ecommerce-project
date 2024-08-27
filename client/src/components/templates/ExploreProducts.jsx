@@ -82,13 +82,17 @@ const ExploreProducts = () => {
   ];
   return (
     <div className="py-6">
-      <div>
+      <div className="flex flex-col lg:px-0 md:px-14 px-4">
         <Heading title="Our Products" />
         <Title props="Explore Our Products" />
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {exploreProductsInfo.map((item) => (
-          <Link to={`/products/${item.id}`} key={item.id}>
+          <Link
+            className="flex justify-center items-center"
+            to={`/products/${item.id}`}
+            key={item.id}
+          >
             <ProductCard {...item} />
           </Link>
         ))}

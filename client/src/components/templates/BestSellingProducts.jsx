@@ -46,7 +46,7 @@ const BestSellingProducts = () => {
   ];
   return (
     <div className="py-6">
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:px-0 md:px-14 px-2">
         <div>
           <Heading title="This Month" />
           <Title props="Best Selling Products" />
@@ -57,7 +57,11 @@ const BestSellingProducts = () => {
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {bestSellingProductsInfo.map((item) => (
-          <Link to={`/products/${item.id}`} key={item.id}>
+          <Link
+            className="flex justify-center items-center"
+            to={`/products/${item.id}`}
+            key={item.id}
+          >
             <ProductCard {...item} />
           </Link>
         ))}

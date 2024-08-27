@@ -1,5 +1,5 @@
 import React from "react";
-import WishListSection from "../organisms/WishListSection";
+import WishListSection from "../templates/WishListSection";
 
 const WishListScreen = () => {
   return (

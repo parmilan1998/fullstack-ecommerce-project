@@ -44,12 +44,16 @@ const RelatedItem = () => {
   ];
   return (
     <div className="mx-3">
-      <div className="pt-4">
+      <div className="pt-4 lg:px-0 md:px-14 ">
         <Heading title="Related Items" />
       </div>
       <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-2 py-8">
         {flashSalesInfo.map((item) => (
-          <Link to={`/products/${item.id}`} key={item.id}>
+          <Link
+            className="flex justify-center items-center"
+            to={`/products/${item.id}`}
+            key={item.id}
+          >
             <ProductCard {...item} />
           </Link>
         ))}
