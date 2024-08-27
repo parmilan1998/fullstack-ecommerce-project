@@ -8,16 +8,17 @@ import SignUpForm from "./SignUpForm";
 import { Modal } from "antd";
 import AuthModal from "./AuthModal";
 import AuthForm from "./AuthForm";
+import { RiMenuUnfold2Line, RiMenuUnfoldLine } from "react-icons/ri";
 
 const Header = () => {
   return (
     <div className="font-poppins">
-      <nav className="flex max-w-screen-xl my-4  mx-auto lg:px-16 justify-between items-center">
+      <nav className="flex max-w-screen-xl my-4 px-4 mx-auto lg:px-16 justify-between items-center">
         <Link to="/">
           <h1 className="text-3xl font-bold">QuickCart</h1>
         </Link>
         <div>
-          <ul className="lg:flex gap-3 hidden">
+          <ul className="md:flex gap-3 hidden">
             <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/">Home</Link>
             </li>
@@ -32,20 +33,27 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <div className="lg:flex hidden justify-center text-xl items-center gap-6">
-          <SearchBar />
-          <Link to="/wishlist">
-            <IoMdHeartEmpty />
-          </Link>
-          <Link to="/cart">
-            <BsCart3 />
-          </Link>
-          {/* <Link to="/account">
+        <div className="flex">
+          <div className="md:flex hidden justify-center text-xl items-center gap-6 lg:px-0 px-4">
+            <div className="lg:flex hidden">
+              <SearchBar />
+            </div>
+            <Link to="/wishlist">
+              <IoMdHeartEmpty />
+            </Link>
+            <Link to="/cart">
+              <BsCart3 />
+            </Link>
+            {/* <Link to="/account">
             <CiUser />
           </Link> */}
-          <div className="flex justify-center items-center">
-            <AuthModal name="Log In" AuthForm={AuthForm} />
+            <div className="flex justify-center items-center">
+              <AuthModal name="Log In" AuthForm={AuthForm} />
+            </div>
           </div>
+          <button className="flex md:hidden justify-center items-center">
+            <RiMenuUnfold2Line size={28} />
+          </button>
         </div>
       </nav>
       <hr />
