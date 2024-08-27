@@ -9,7 +9,7 @@ import DeliveryInfo from "./DeliveryInfo";
 
 const SingleProductInfo = () => {
   return (
-    <div className="py-3 lg:mx-8 md:mx-8 mx-4 font-poppins">
+    <div className="py-3 mx-4 md:mx-8 font-poppins">
       <div className=" space-y-2">
         <h1 className="font-bold text-xl tracking-wide">
           Havic HV G-92 Gamepad

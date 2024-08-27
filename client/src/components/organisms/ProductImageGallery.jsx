@@ -19,14 +19,14 @@ const ProductImageGallery = () => {
   const [mainImage, setMainImage] = useState(images[1]);
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex flex-col gap-4 rounded bg-gray-200 p-2.5 m-3">
+    <div className="flex md:flex-row flex-col-reverse justify-center items-center">
+      <div className="flex md:flex-col flex-row gap-4 rounded bg-gray-200 p-2.5 m-3">
         {images.map((image, index) => (
           <img
             key={index}
             src={image}
             alt={`Thumbnail ${index + 1}`}
-            className={`cursor-pointer p-2 w-32 h-28 object-fill rounded ${
+            className={`cursor-pointer p-2 md:w-32 md:h-28 w-16 h-16 object-fill rounded ${
               image === mainImage
                 ? "border-2 border-blue-500"
                 : "border-2 border-transparent"
@@ -39,7 +39,7 @@ const ProductImageGallery = () => {
         <Zoom>
           <img
             src={mainImage}
-            className="w-[520px] h-[520px] bg-cover p-4 object-fill bg-slate-200 rounded"
+            className="md:w-[520px] md:h-[520px] w-80 h-80 bg-cover p-4 object-fill bg-slate-200 rounded"
             alt="Main Product"
           />
         </Zoom>

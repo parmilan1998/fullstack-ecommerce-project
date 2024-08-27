@@ -8,7 +8,7 @@ const SingleProductDetails = () => {
       <div className="col-span-4">
         <ProductImageGallery />
       </div>
-      <div className="col-span-3 lg:px-0 md:px-12 px-2">
+      <div className="col-span-3 lg:px-0 md:px-12 px-5">
         <SingleProductInfo />
       </div>
     </div>
