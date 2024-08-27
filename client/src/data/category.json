@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "_id": "66cd9cf99bb4c4415a0d10ba",
+      "categoryName": "Electronics",
+      "description": "Cutting-edge gadgets and devices for home and personal use, including smartphones, laptops, and smart home systems.",
+      "image": "image-1724751096935-639204740.jpg",
+      "createdAt": "2024-08-27T09:31:37.720Z",
+      "updatedAt": "2024-08-27T09:31:37.720Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cd9d6d9bb4c4415a0d10bd",
+      "categoryName": "Beauty & Personal Care",
+      "description": "High-quality cosmetics, skincare products, and personal grooming items to help you look and feel your best.",
+      "image": "image-1724751213293-957945270.jpg",
+      "createdAt": "2024-08-27T09:33:33.402Z",
+      "updatedAt": "2024-08-27T09:33:33.402Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cd9ddd9bb4c4415a0d10c0",
+      "categoryName": "Sports & Outdoors",
+      "description": "Equipment and gear for all your favorite sports and outdoor activities, from camping to fitness training.",
+      "image": "image-1724751325706-415555029.jpg",
+      "createdAt": "2024-08-27T09:35:25.781Z",
+      "updatedAt": "2024-08-27T09:35:25.781Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cd9e609bb4c4415a0d10c3",
+      "categoryName": "Books & Stationery",
+      "description": "A wide selection of books across various genres, plus writing materials and office supplies for work or school.",
+      "image": "image-1724751455925-314632870.jpg",
+      "createdAt": "2024-08-27T09:37:36.460Z",
+      "updatedAt": "2024-08-27T09:37:36.460Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cd9f0e9bb4c4415a0d10c6",
+      "categoryName": "Automotive",
+      "description": "Car parts, accessories, and maintenance products to keep your vehicle running smoothly and looking great.",
+      "image": "image-1724751630518-739003841.jpg",
+      "createdAt": "2024-08-27T09:40:30.603Z",
+      "updatedAt": "2024-08-27T09:40:30.603Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cd9fb29bb4c4415a0d10c9",
+      "categoryName": "Health & Wellness",
+      "description": "Vitamins, supplements, fitness equipment, and natural remedies to support a healthy lifestyle.",
+      "image": "image-1724751794285-493121454.jpg",
+      "createdAt": "2024-08-27T09:43:14.394Z",
+      "updatedAt": "2024-08-27T09:43:14.394Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cda0419bb4c4415a0d10cc",
+      "categoryName": "Jewelry & Watches",
+      "description": "Elegant and stylish jewelry pieces and timepieces for every occasion, from everyday wear to special events.",
+      "image": "image-1724751937059-910728951.jpg",
+      "createdAt": "2024-08-27T09:45:37.145Z",
+      "updatedAt": "2024-08-27T09:45:37.145Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdacf59bb4c4415a0d10cf",
+      "categoryName": "Baby & Kids",
+      "description": "Essential items for infants and children, including clothing, gear, and educational toys.",
+      "image": "image-1724755173984-550818336.jpg",
+      "createdAt": "2024-08-27T10:39:49.664Z",
+      "updatedAt": "2024-08-27T10:39:49.664Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdadae9bb4c4415a0d10d2",
+      "categoryName": "Furniture",
+      "description": "Stylish and functional furniture for every room in your home or office, from sofas to desks.",
+      "image": "image-1724755369448-236569565.jpg",
+      "createdAt": "2024-08-27T10:42:54.351Z",
+      "updatedAt": "2024-08-27T10:42:54.351Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdae1a9bb4c4415a0d10d5",
+      "categoryName": "Kitchen & Dining",
+      "description": "Cookware, appliances, and dining essentials to make your culinary adventures a success.",
+      "image": "image-1724755482874-133343885.jpg",
+      "createdAt": "2024-08-27T10:44:42.958Z",
+      "updatedAt": "2024-08-27T10:44:42.958Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdaeb29bb4c4415a0d10d8",
+      "categoryName": "Music & Instruments",
+      "description": "Instruments, accessories, and audio equipment for musicians of all levels, from beginners to professionals.",
+      "image": "image-1724755629656-553883979.jpg",
+      "createdAt": "2024-08-27T10:47:14.606Z",
+      "updatedAt": "2024-08-27T10:47:14.606Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdaf199bb4c4415a0d10db",
+      "categoryName": "Office Products",
+      "description": "Furniture, technology, and supplies to create a productive work environment, whether at home or in the office.",
+      "image": "image-1724755737809-707739008.jpg",
+      "createdAt": "2024-08-27T10:48:57.882Z",
+      "updatedAt": "2024-08-27T10:48:57.882Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdafa79bb4c4415a0d10de",
+      "categoryName": "Travel & Luggage",
+      "description": "Everything you need for your next adventure, from suitcases and backpacks to travel accessories.",
+      "image": "image-1724755879464-159356959.jpg",
+      "createdAt": "2024-08-27T10:51:19.537Z",
+      "updatedAt": "2024-08-27T10:51:19.537Z",
+      "__v": 0
+    }
+  ]
+}

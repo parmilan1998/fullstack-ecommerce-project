@@ -1,0 +1,89 @@
+{
+  "products": [
+    {
+      "_id": "66cdb524991f80ce0ace6e7f",
+      "productName": "Samsung Galaxy S21",
+      "productDescription": "High-end smartphone with advanced camera features and long battery life.",
+      "productImage": [
+        "productImage-1724757284319-789050750.jpg",
+        "productImage-1724757284321-340733327.jpg",
+        "productImage-1724757284322-208089432.jpg",
+        "productImage-1724757284323-289692898.jpg"
+      ],
+      "productPrice": 799.99,
+      "productStocks": 100,
+      "category": "66cd9cf99bb4c4415a0d10ba",
+      "createdAt": "2024-08-27T11:14:44.421Z",
+      "updatedAt": "2024-08-27T11:14:44.421Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdb640991f80ce0ace6e83",
+      "productName": "Dell Inspiron 15 5502",
+      "productDescription": "Powerful laptop for professionals and creative users.",
+      "productImage": [
+        "productImage-1724757568187-161527674.png",
+        "productImage-1724757568190-349034098.jpg",
+        "productImage-1724757568191-742778159.jpg",
+        "productImage-1724757568192-549055984.jpg"
+      ],
+      "productPrice": 1299.99,
+      "productStocks": 50,
+      "category": "66cd9cf99bb4c4415a0d10ba",
+      "createdAt": "2024-08-27T11:19:28.264Z",
+      "updatedAt": "2024-08-27T11:19:28.264Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdbb05991f80ce0ace6e87",
+      "productName": "Smart TV 4K",
+      "productDescription": "55-inch 4K smart TV with HDR and built-in streaming apps.",
+      "productImage": [
+        "productImage-1724758789031-667638134.jpg",
+        "productImage-1724758789032-165614014.jfif",
+        "productImage-1724758789033-618706122.jpg",
+        "productImage-1724758789033-155757496.jfif"
+      ],
+      "productPrice": 649.99,
+      "productStocks": 75,
+      "category": "66cd9cf99bb4c4415a0d10ba",
+      "createdAt": "2024-08-27T11:39:49.127Z",
+      "updatedAt": "2024-08-27T11:39:49.127Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdbc01991f80ce0ace6e8a",
+      "productName": "Wireless Earbuds",
+      "productDescription": "True wireless earbuds with noise cancellation and long battery life.",
+      "productImage": [
+        "productImage-1724759041867-280339360.jpg",
+        "productImage-1724759041872-485868110.jpg",
+        "productImage-1724759041873-755258558.jpg",
+        "productImage-1724759041875-289056534.jpg"
+      ],
+      "productPrice": 149.99,
+      "productStocks": 200,
+      "category": "66cd9cf99bb4c4415a0d10ba",
+      "createdAt": "2024-08-27T11:44:01.958Z",
+      "updatedAt": "2024-08-27T11:44:01.958Z",
+      "__v": 0
+    },
+    {
+      "_id": "66cdbd7c991f80ce0ace6e8d",
+      "productName": "Smart Home Hub",
+      "productDescription": "Central hub for controlling all your smart home devices.",
+      "productImage": [
+        "productImage-1724759420484-92932537.jpg",
+        "productImage-1724759420486-583210682.jpg",
+        "productImage-1724759420488-605735910.png",
+        "productImage-1724759420489-21574145.jpg"
+      ],
+      "productPrice": 129.99,
+      "productStocks": 150,
+      "category": "66cd9cf99bb4c4415a0d10ba",
+      "createdAt": "2024-08-27T11:50:20.562Z",
+      "updatedAt": "2024-08-27T11:50:20.562Z",
+      "__v": 0
+    }
+  ]
+}

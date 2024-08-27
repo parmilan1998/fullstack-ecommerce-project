@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import Title from "../atoms/Title";
+import LoadingSpinner from "../atoms/LoadingSpinner";
 
 const RelatedItem = lazy(() => import("../templates/RelatedItem"));
 const Review = lazy(() => import("../templates/Review"));
@@ -11,8 +12,8 @@ const ProductDetailsScreen = ({ item }) => {
   return (
     <Suspense
       fallback={
-        <div style={{ textAlign: "center", padding: "20px", fontSize: "24px" }}>
-          Loading...
+        <div className="flex justify-center items-center">
+          <LoadingSpinner />
         </div>
       }
     >
