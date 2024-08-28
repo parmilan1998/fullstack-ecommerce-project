@@ -10,6 +10,7 @@ export const createProduct = asyncHandler(async (req, res) => {
     productDescription,
     productPrice,
     productStocks,
+    discount,
     categoryName,
   } = req.body;
 
@@ -18,6 +19,7 @@ export const createProduct = asyncHandler(async (req, res) => {
     !productDescription ||
     !productPrice ||
     !productStocks ||
+    !discount ||
     !categoryName
   ) {
     return res.status(400).json({ message: "All fields are required" });
@@ -30,6 +32,8 @@ export const createProduct = asyncHandler(async (req, res) => {
     return res.status(404).json({ message: "Category not found" });
   }
 
+  const discountPrice = productPrice - productPrice * (discount / 100);
+
   const productImage = req.files.map((file) => file.filename);
 
   const product = await Product.create({
@@ -37,17 +41,30 @@ export const createProduct = asyncHandler(async (req, res) => {
     productDescription,
     productImage,
     productPrice,
+    discountPrice,
+    discount,
     productStocks,
     category: category._id,
   });
 
-  res.status(201).json({ message: "Product created successfully", product });
+  res.status(201).json({
+    message: "Product created successfully",
+    _id: product._id,
+    productName: product.productName,
+    productDescription: product.productDescription,
+    productImage: product.productImage,
+    productPrice: product.productPrice,
+    discountPrice: product.discountPrice,
+    discount: product.discount,
+    productStocks: product.productStocks,
+    category: category.categoryName,
+  });
 });
 
 //TODO: GET - http://localhost:8080/api/v1/product
 export const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find();
-  res.status(200).json({ products: products });
+  res.status(200).json(products);
 });
 
 //TODO: GET - http://localhost:8080/api/v1/product/id
@@ -69,6 +86,8 @@ export const updateProduct = asyncHandler(async (req, res) => {
     productPrice,
     productStocks,
     categoryName,
+    discount,
+    discountPrice,
   } = req.body;
 
   const category = await Category.findOne({ categoryName });
@@ -88,6 +107,8 @@ export const updateProduct = asyncHandler(async (req, res) => {
       productDescription,
       productPrice,
       productStocks,
+      discountPice: productPrice - productPrice * (discount / 100),
+      discount,
       category: category._id,
       ...(productImage && { productImage }),
     },

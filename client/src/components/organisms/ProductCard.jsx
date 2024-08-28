@@ -7,10 +7,10 @@ import { useLocation } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
 const ProductCard = ({
-  id,
+  _id,
   image,
   productName,
-  price,
+  productPrice,
   discountPice,
   ratingCount,
 }) => {
@@ -40,7 +40,11 @@ const ProductCard = ({
           )}
         </div>
         <div className=" flex-grow flex items-center">
-          <img src={image} alt="Product" className="object-cover mx-auto" />
+          <img
+            src={image}
+            alt="Product"
+            className="bg-cover w-64 h-56 object-fill  rounded mx-auto"
+          />
         </div>
         <div>
           {visible && (
@@ -54,13 +58,11 @@ const ProductCard = ({
         <h1>{productName}</h1>
         <div className="flex gap-2">
           <span className=" text-red-500">{discountPice}</span>
-          <span className=" line-through text-gray-400">{price}</span>
+          <span className=" line-through text-gray-400">${productPrice}</span>
         </div>
         <div className="flex gap-2">
           <RatingStar />
-          {ratingCount && (
-            <span className="text-sm text-gray-400">({ratingCount})</span>
-          )}
+          <span className="text-sm text-gray-400">{ratingCount}</span>
         </div>
       </div>
     </div>
