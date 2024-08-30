@@ -1,27 +1,17 @@
 import React, { useState } from "react";
-import GamePadImage from "../../assets/img01.png";
-import GamePadImage2 from "../../assets/img02.png";
-import GamePadImage3 from "../../assets/img03.png";
-import GamePadImage4 from "../../assets/img04.png";
-// import GamePadImage5 from "../../assets/image05.png";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+const apiUrl = import.meta.env.VITE_BASE_URL;
 
-const ProductImageGallery = () => {
-  const images = [
-    GamePadImage,
-    GamePadImage2,
-    GamePadImage3,
-    GamePadImage4,
-    // GamePadImage5,
-  ];
-
-  const [mainImage, setMainImage] = useState(images[1]);
-
+const ProductImageGallery = ({ product }) => {
+  const [mainImage, setMainImage] = useState(
+    `${apiUrl}/${product.product.productImage[1]}`
+  );
+  console.log(mainImage);
   return (
     <div className="flex md:flex-row flex-col-reverse justify-center items-center">
       <div className="flex md:flex-col flex-row gap-4 rounded bg-gray-200 p-2.5 m-3">
-        {images.map((image, index) => (
+        {product.product.productImage.map((image, index) => (
           <img
             key={index}
             src={image}

@@ -3,7 +3,7 @@ import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
 import { HiOutlineEye } from "react-icons/hi";
 import RatingStar from "../molecules/RatingStar";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
 const ProductCard = ({
@@ -11,6 +11,7 @@ const ProductCard = ({
   image,
   productName,
   productPrice,
+  discount,
   discountPice,
   ratingCount,
 }) => {
@@ -29,11 +30,16 @@ const ProductCard = ({
       onMouseLeave={() => !isWishlist && setVisible(false)}
     >
       <div className="bg-slate-200 relative flex flex-col rounded justify-center w-64 h-56">
+        <div className="bg-red-500 rounded px-3 py-1 w-14 text-sm text-white absolute top-2 left-2">
+          <span>-{discount}%</span>
+        </div>
         <div className="top-2 right-0 absolute cursor-pointer">
           {!isWishlist ? (
             <>
               <CardButton onClick={handleWishListClick} name={<FaRegHeart />} />
-              <CardButton name={<HiOutlineEye />} />
+              <Link to={`/products/${_id}`}>
+                <CardButton name={<HiOutlineEye />} />
+              </Link>
             </>
           ) : (
             <CardButton name={<MdDelete color="red" />} />
@@ -43,7 +49,7 @@ const ProductCard = ({
           <img
             src={image}
             alt="Product"
-            className="bg-cover w-64 h-56 object-fill  rounded mx-auto"
+            className="bg-cover p-6 object-fill rounded mx-auto"
           />
         </div>
         <div>
@@ -62,7 +68,7 @@ const ProductCard = ({
         </div>
         <div className="flex gap-2">
           <RatingStar />
-          <span className="text-sm text-gray-400">{ratingCount}</span>
+          <span className="text-sm text-gray-400">{ratingCount || 22}</span>
         </div>
       </div>
     </div>

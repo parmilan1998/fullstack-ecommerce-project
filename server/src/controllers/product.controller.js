@@ -42,22 +42,14 @@ export const createProduct = asyncHandler(async (req, res) => {
     productImage,
     productPrice,
     discountPrice,
-    discount,
+    discount: discount || 0,
     productStocks,
     category: category._id,
   });
 
   res.status(201).json({
     message: "Product created successfully",
-    _id: product._id,
-    productName: product.productName,
-    productDescription: product.productDescription,
-    productImage: product.productImage,
-    productPrice: product.productPrice,
-    discountPrice: product.discountPrice,
-    discount: product.discount,
-    productStocks: product.productStocks,
-    category: category.categoryName,
+    product,
   });
 });
 
