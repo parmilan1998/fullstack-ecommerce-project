@@ -2,6 +2,8 @@ import React from "react";
 import ReviewCard from "../organisms/ReviewCard";
 import Title from "../atoms/Title";
 import { Link } from "react-router-dom";
+import ButtonRounded from "../atoms/ButtonRounded";
+import ReviewForm from "../organisms/AddReviewSection";
 
 const Review = () => {
   const reviewsInfo = [
@@ -43,13 +45,15 @@ const Review = () => {
       <section className="font-poppins lg:mx-auto md:mx-16 mx-4">
         <div className="mx-auto py-6 lg:pl-3 lg:pr-8 lg:py-10">
           <div className="md:flex md:items-end md:justify-between">
-            <Title props="Reviews from our customers" />
-            <Link
+            <div className="flex">
+              <Title props="Reviews from our customers" />
+              {/* <ButtonRounded name="Write a customer review" /> */}
+            </div>
+            {/* <Link
               to="/reviews"
               className="mt-6 text-md inline-flex shrink-0 items-center gap-2 rounded-full border border-blue-600 px-4 py-2 text-blue-600 transition hover:bg-blue-600 hover:text-gray-100 md:mt-0"
             >
               <span className="font-medium text-md"> Read all reviews </span>
-
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="size-4 rtl:rotate-180"
@@ -64,9 +68,10 @@ const Review = () => {
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </Link>
+            </Link> */}
+            {/* <ButtonRounded name="Write a customer review" /> */}
+            <ReviewForm />
           </div>
-
           <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {reviewsInfo.map((item) => (
               <ReviewCard key={item.id} {...item} />

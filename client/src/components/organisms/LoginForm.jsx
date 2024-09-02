@@ -7,9 +7,9 @@ const LoginForm = () => {
         <form>
           <div className="my-6">
             <input
-              id="id-b02"
+              id="email"
               type="text"
-              name="id-b02"
+              name="email"
               placeholder="Enter email address"
               className=" w-full h-10 bg-white px-2 text-sm transition-all border-b outline-none focus-visible:outline-none peer border-slate-200 text-slate-500 autofill:bg-white invalid:border-pink-500 invalid:text-pink-500 focus:border-emerald-500 focus:outline-none invalid:focus:border-pink-500 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
             />
