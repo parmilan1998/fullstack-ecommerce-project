@@ -10,24 +10,30 @@ const Breadcrumbs = () => {
       <Link
         to="/"
         className={
-          location.pathname === "/" ? "text-blue-500 " : "text-gray-400"
+          location.pathname === "/" ? "text-blue-500" : "text-gray-400"
         }
       >
         Home <span className="breadcrumb-arrow">&gt;</span>&nbsp;
       </Link>
       {pathnames.map((value, index) => {
         const to = `/${pathnames.slice(0, index + 1).join("/")}`;
+        const displayValue =
+          index === 0 ? value.charAt(0).toUpperCase() + value.slice(1) : value;
 
         return (
-          <Link
-            key={to}
-            to={to}
-            className={
-              location.pathname === to ? "text-blue-500" : "text-gray-400"
-            }
-          >
-            {value.charAt(0).toUpperCase() + value.slice(1)}
-          </Link>
+          <React.Fragment key={to}>
+            <Link
+              to={to}
+              className={
+                location.pathname === to ? "text-blue-500" : "text-gray-400"
+              }
+            >
+              {displayValue}
+            </Link>
+            {index < pathnames.length - 1 && (
+              <span className="breadcrumb-arrow">&nbsp;&gt;&nbsp;</span>
+            )}
+          </React.Fragment>
         );
       })}
     </nav>

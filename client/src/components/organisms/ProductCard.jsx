@@ -54,7 +54,7 @@ const ProductCard = ({
         </div>
         <div>
           {visible && (
-            <button className="w-full bg-black py-1.5 rounded-b text-white flex justify-center items-end text-center">
+            <button className="w-full absolute bottom-0 ease-in duration-200 bg-black py-1.5 rounded-b text-white flex justify-center items-end text-center">
               Add To Cart
             </button>
           )}

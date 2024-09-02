@@ -7,12 +7,12 @@ import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
 import DeliveryInfo from "./DeliveryInfo";
 
-const SingleProductInfo = () => {
+const SingleProductInfo = ({ product }) => {
   return (
     <div className="py-3 mx-4 md:mx-8 font-poppins">
       <div className=" space-y-2">
         <h1 className="font-bold text-xl tracking-wide">
-          Havic HV G-92 Gamepad
+          {product.productName}
         </h1>
         <div className="flex space-x-2">
           <div>
@@ -22,18 +22,20 @@ const SingleProductInfo = () => {
             <span>(150 Reviews)</span>
           </div>
           <div>
-            <span className=" text-green-500">In Stock</span>
+            <span className=" text-green-500">
+              {product.productStocks > 0 ? (
+                <span className="text-green-500">In Stock</span>
+              ) : (
+                <span className="text-red-500">Out of Stock</span>
+              )}
+            </span>
           </div>
         </div>
         <div>
-          <span>$192.00</span>
+          <span>${product.discountPrice}</span>
         </div>
         <div>
-          <p className="text-sm leading-6">
-            PlayStation 5 Controller Skin High quality vinyl with air channel
-            adhesive for easy bubble free install & mess free removal Pressure
-            sensitive.
-          </p>
+          <p className="text-sm leading-6">{product.productDescription}</p>
         </div>
         <hr className="my-2 font-medium" />
         <ProductColors />

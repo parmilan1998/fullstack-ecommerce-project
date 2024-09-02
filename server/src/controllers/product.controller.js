@@ -66,7 +66,7 @@ export const getProductById = asyncHandler(async (req, res) => {
   if (!product) {
     return res.status(404).json({ message: "Product not found" });
   }
-  res.status(200).json({ product: product });
+  res.status(200).json(product);
 });
 
 //TODO: PUT - http://localhost:8080/api/v1/product/id
