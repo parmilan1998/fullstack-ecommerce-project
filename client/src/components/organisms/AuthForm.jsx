@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 
-const AuthForm = () => {
+const AuthForm = ({ setIsModalOpen }) => {
   const [isLogin, setIsLogin] = useState(true);
 
   const toggleForm = () => {
@@ -20,7 +20,11 @@ const AuthForm = () => {
             </h1>
             <p className="text-center">Enter your details below</p>
           </div>
-          {isLogin ? <LoginForm /> : <SignUpForm />}
+          {isLogin ? (
+            <LoginForm setIsModalOpen={setIsModalOpen} />
+          ) : (
+            <SignUpForm toggleForm={toggleForm} />
+          )}
           <div className="flex py-4 px-4 gap-2 justify-between">
             <div className="flex gap-2">
               <span className="text-sm">

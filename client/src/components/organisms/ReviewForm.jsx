@@ -4,9 +4,9 @@ const ReviewForm = () => {
   return (
     <div className=" font-poppins">
       <div className="flex justify-center items-center">
-        <span className="text-lg font-poppins pt-4 text-center">
+        {/* <span className="text-lg font-poppins pt-4 text-center">
           Hello, Ravi What do you think about it?
-        </span>
+        </span> */}
       </div>
       <div className="py-6">
         <div className="flex flex-col">

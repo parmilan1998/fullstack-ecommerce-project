@@ -8,12 +8,16 @@ import AuthModal from "./AuthModal";
 import AuthForm from "./AuthForm";
 import { RiMenuUnfold2Line } from "react-icons/ri";
 import ToggleMenu from "./ToggleMenu";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const user = useSelector((state) => state.user);
+  console.log(user);
+
   return (
     <div className="font-poppins">
       <nav className="flex max-w-screen-xl my-4 px-4 mx-auto lg:px-16 justify-between items-center">
@@ -47,12 +51,22 @@ const Header = () => {
             <Link to="/cart">
               <BsCart3 />
             </Link>
-            {/* <Link to="/account">
-            <CiUser />
-          </Link> */}
-            <div className="flex justify-center items-center">
+            {/* <Link>
+              <CiUser />
+            </Link> */}
+            {/* <div className="flex justify-center items-center">
               <AuthModal name="Log In" AuthForm={AuthForm} />
-            </div>
+            </div> */}
+            {user && user.username ? (
+              <div className="flex items-center gap-2">
+                <CiUser />
+                <span>{user.username}</span>
+              </div>
+            ) : (
+              <div className="flex justify-center items-center">
+                <AuthModal name="Log In" AuthForm={AuthForm} />
+              </div>
+            )}
           </div>
           <button
             onClick={toggleMenu}

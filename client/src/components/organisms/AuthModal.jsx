@@ -18,7 +18,7 @@ const LoginModal = ({ AuthForm }) => {
         Log In
       </button>
       <Modal open={isModalOpen} onCancel={handleCancel} footer={null}>
-        <AuthForm />
+        <AuthForm setIsModalOpen={setIsModalOpen} />
       </Modal>
     </div>
   );
