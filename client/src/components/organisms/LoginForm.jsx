@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { loginUser } from "../../features/userSlice";
+import { login, loginUser } from "../../features/userSlice";
 import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 const LoginForm = ({ setIsModalOpen }) => {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -18,11 +20,16 @@ const LoginForm = ({ setIsModalOpen }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(loginUser(formData));
-    if (result) {
+    try {
+      const result = await dispatch(loginUser(formData)).unwrap();
+      dispatch(login(result));
+      toast.success("Login Successfully!");
       setIsModalOpen(false);
+    } catch (error) {
+      toast.error(error.message || "Login failed. Please try again.");
     }
   };
+
   return (
     <div>
       <div className="flex flex-col font-poppins p-4">

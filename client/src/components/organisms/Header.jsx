@@ -8,15 +8,49 @@ import AuthModal from "./AuthModal";
 import AuthForm from "./AuthForm";
 import { RiMenuUnfold2Line } from "react-icons/ri";
 import ToggleMenu from "./ToggleMenu";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, logoutUser } from "../../features/userSlice";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const user = useSelector((state) => state.user);
-  console.log(user);
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
+  const role = useSelector((state) => state.user.role);
+
+  const handleLogout = async () => {
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out!",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, log me out!",
+      customClass: {
+        popup: "rounded-lg shadow-lg bg-white p-6 font-poppins",
+        title: "text-xl font-semibold text-gray-800 font-poppins",
+        content: "text-gray-600 font-poppins text-sm ",
+        confirmButton:
+          "bg-blue-500 hover:bg-blue-600 text-white text-sm  py-2 px-4 rounded font-poppins",
+        cancelButton:
+          "bg-red-500 hover:bg-red-600 text-white text-sm  py-2 px-4 rounded ml-2 font-poppins",
+      },
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await dispatch(logoutUser());
+        dispatch(logout());
+        toast.success("Logout Successfully!");
+      } catch (error) {
+        toast.error(error.message);
+      }
+    }
+  };
 
   return (
     <div className="font-poppins">
@@ -51,17 +85,13 @@ const Header = () => {
             <Link to="/cart">
               <BsCart3 />
             </Link>
-            {/* <Link>
-              <CiUser />
-            </Link> */}
-            {/* <div className="flex justify-center items-center">
-              <AuthModal name="Log In" AuthForm={AuthForm} />
-            </div> */}
-            {user && user.username ? (
-              <div className="flex items-center gap-2">
-                <CiUser />
-                <span>{user.username}</span>
-              </div>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="flex items-center text-sm gap-2"
+              >
+                logout
+              </button>
             ) : (
               <div className="flex justify-center items-center">
                 <AuthModal name="Log In" AuthForm={AuthForm} />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../features/userSlice";
+import { register, registerUser } from "../../features/userSlice";
+import toast from "react-hot-toast";
 
 const SignUpForm = ({ toggleForm }) => {
   const [formData, setFormData] = useState({
@@ -19,9 +20,13 @@ const SignUpForm = ({ toggleForm }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await dispatch(registerUser(formData));
-    if (result) {
+    try {
+      const result = await dispatch(registerUser(formData)).unwrap();
+      dispatch(register(result));
+      toast.success("Account created successfully!");
       toggleForm();
+    } catch (error) {
+      toast.error(error.message || "Registration failed. Please try again.");
     }
   };
 

@@ -19,13 +19,13 @@ const ProductImageGallery = ({ product }) => {
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-center items-center">
-      <div className="flex md:flex-col flex-row gap-4 rounded bg-gray-200 p-2.5 m-3">
+      <div className="flex md:flex-col flex-row gap-4 rounded  p-2.5 m-3">
         {product.productImage.map((image, index) => (
           <img
             key={index}
             src={`${apiUrl}/${image}`}
             alt={`Thumbnail ${index + 1}`}
-            className={`cursor-pointer p-2 md:w-32 md:h-28 w-16 h-16 object-fill rounded ${
+            className={`bg-gray-200 cursor-pointer p-2 md:w-32 md:h-28 w-16 h-16 object-fill rounded ${
               `${apiUrl}/${image}` === mainImage
                 ? "border-2 border-blue-500"
                 : "border-2 border-transparent"
@@ -38,7 +38,7 @@ const ProductImageGallery = ({ product }) => {
         <Zoom>
           <img
             src={mainImage}
-            className="md:w-[520px] md:h-[520px] w-80 h-80 bg-cover p-4 object-fill bg-slate-200 rounded"
+            className="md:w-[520px] md:h-[500px] w-80 h-80 bg-cover p-4 object-fill bg-slate-200 rounded"
             alt="Main Product"
           />
         </Zoom>
