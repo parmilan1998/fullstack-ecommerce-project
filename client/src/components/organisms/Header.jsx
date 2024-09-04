@@ -21,6 +21,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const role = useSelector((state) => state.user.role);
+  const isDisabled = role === "admin";
 
   const handleLogout = async () => {
     const result = await Swal.fire({
@@ -72,6 +73,11 @@ const Header = () => {
             <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/products">Products</Link>
             </li>
+            {role === "admin" && (
+              <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="flex">
@@ -79,12 +85,17 @@ const Header = () => {
             <div className="lg:flex hidden">
               <SearchBar />
             </div>
-            <Link to="/wishlist">
-              <IoMdHeartEmpty />
-            </Link>
-            <Link to="/cart">
-              <BsCart3 />
-            </Link>
+            {!isDisabled && (
+              <div className="flex gap-6">
+                <Link to="/wishlist">
+                  <IoMdHeartEmpty />
+                </Link>
+                <Link to="/cart">
+                  <BsCart3 />
+                </Link>
+              </div>
+            )}
+
             {user ? (
               <button
                 onClick={handleLogout}

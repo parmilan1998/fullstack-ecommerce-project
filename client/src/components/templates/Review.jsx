@@ -4,8 +4,12 @@ import Title from "../atoms/Title";
 import { Link } from "react-router-dom";
 import ButtonRounded from "../atoms/ButtonRounded";
 import ReviewForm from "../organisms/AddReviewSection";
+import { useSelector } from "react-redux";
 
 const Review = () => {
+  const role = useSelector((state) => state.user.role);
+  const isDisabled = role === "admin";
+
   const reviewsInfo = [
     {
       id: 1,
@@ -70,7 +74,7 @@ const Review = () => {
               </svg>
             </Link> */}
             {/* <ButtonRounded name="Write a customer review" /> */}
-            <ReviewForm />
+            {!isDisabled && <ReviewForm />}
           </div>
           <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {reviewsInfo.map((item) => (

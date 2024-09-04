@@ -1,7 +1,8 @@
 import asyncHandler from "express-async-handler";
 import User from "../models/user.models.js";
 import bcrypt from "bcryptjs";
-import generateToken from "../utils/token.js";
+import generateToken from "../utils/generateToken.js";
+import sendVerificationEmail from "../nodemailer/emailService.js";
 
 // POST - http://localhost:8080/api/v1/user/register
 export const registerUser = asyncHandler(async (req, res) => {
@@ -15,31 +16,47 @@ export const registerUser = asyncHandler(async (req, res) => {
   // TODO: Check user is already registered
   const existingUser = await User.findOne({ $or: [{ username }, { email }] });
   if (existingUser) {
-    return res
-      .status(400)
-      .json({ message: "User with username or email already exists" });
+    return res.status(400).json({
+      success: false,
+      message: "User with username or email already exists",
+    });
   }
 
   //TODO:  Hash the password
   const hashedPassword = await bcrypt.hash(password, 10);
 
+  const verificationToken = Math.floor(
+    100000 + Math.random() * 900000
+  ).toString();
+
   //TODO: Create a new user
-  const user = await User.create({
+  const user = new User({
     username,
     email,
     password: hashedPassword,
     role: role || "user",
     avatar: req.file?.filename,
+    verificationToken,
+    verificationTokenExpiresAt: Date.now() + 24 * 60 * 60 * 1000,
   });
 
+  // TODO: save user
+  await user.save();
+
+  generateToken(res, user._id);
+
+  console.log({ user });
+
+  // TODO: Send verification email
+  await sendVerificationEmail(user.email, verificationToken);
+
   res.status(201).json({
-    message: "User registered successfully",
-    _id: user._id,
-    username: user.username,
-    email: user.email,
-    password: user.password,
-    role: user.role,
-    avatar: user.avatar,
+    success: true,
+    message: "User created successfully",
+    user: {
+      ...user._doc,
+      password: undefined,
+    },
   });
 });
 

@@ -5,6 +5,7 @@ import { HiOutlineEye } from "react-icons/hi";
 import RatingStar from "../molecules/RatingStar";
 import { Link, useLocation } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const ProductCard = ({
   _id,
@@ -23,6 +24,9 @@ const ProductCard = ({
     console.log("Add Wishlist");
   };
 
+  const role = useSelector((state) => state.user.role);
+  const isDisabled = role === "admin";
+
   return (
     <div
       className="font-poppins mx-auto"
@@ -36,7 +40,12 @@ const ProductCard = ({
         <div className="top-2 right-0 absolute cursor-pointer">
           {!isWishlist ? (
             <>
-              <CardButton onClick={handleWishListClick} name={<FaRegHeart />} />
+              {!isDisabled && (
+                <CardButton
+                  onClick={handleWishListClick}
+                  name={<FaRegHeart />}
+                />
+              )}
               <Link to={`/products/${_id}`}>
                 <CardButton name={<HiOutlineEye />} />
               </Link>
@@ -53,7 +62,7 @@ const ProductCard = ({
           />
         </div>
         <div>
-          {visible && (
+          {visible && !isDisabled && (
             <button className="w-full absolute bottom-0 ease-in duration-200 bg-black py-1.5 rounded-b text-white flex justify-center items-end text-center">
               Add To Cart
             </button>

@@ -6,8 +6,12 @@ import ProductButton from "../atoms/ProductButton";
 import CardButton from "../atoms/CardButton";
 import { FaRegHeart } from "react-icons/fa";
 import DeliveryInfo from "./DeliveryInfo";
+import { useSelector } from "react-redux";
 
 const SingleProductInfo = ({ product }) => {
+  const role = useSelector((state) => state.user.role);
+  const isDisabled = role === "admin";
+
   return (
     <div className="py-3 mx-4 md:mx-8 font-poppins">
       <div className=" space-y-2">
@@ -41,23 +45,21 @@ const SingleProductInfo = ({ product }) => {
         <ProductColors />
         <ProductSize />
         <div className="flex items-center space-x-2 py-3">
-          <div className="inline-flex overflow-hidden rounded">
-            <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-2xl font-normal tracking-wide text-black transition duration-300 hover:bg-blue-600 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed hover:text-white border border-gray-400 rounded-l disabled:border-gray-400 disabled:bg-emerald-300 disabled:shadow-none">
-              <span>-</span>
-            </button>
-            <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-sm font-medium tracking-wide transition duration-300 hover:bg-white focus:bg-white focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 border border-gray-400 text-black disabled:bg-emerald-300 disabled:shadow-none">
-              <span>2</span>
-            </button>
-            <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-2xl font-normal tracking-wide text-black transition duration-300 hover:bg-blue-600 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed hover:text-white border border-gray-400 rounded-r disabled:border-gray-400 disabled:bg-emerald-300 disabled:shadow-none">
-              <span>+</span>
-            </button>
-          </div>
-          <div>
-            <ProductButton name="But Now" />
-          </div>
-          <div>
-            <CardButton name={<FaRegHeart />} />
-          </div>
+          {!isDisabled && (
+            <div className="inline-flex overflow-hidden rounded">
+              <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-2xl font-normal tracking-wide text-black transition duration-300 hover:bg-blue-600 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed hover:text-white border border-gray-400 rounded-l disabled:border-gray-400 disabled:bg-emerald-300 disabled:shadow-none">
+                <span>-</span>
+              </button>
+              <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-sm font-medium tracking-wide transition duration-300 hover:bg-white focus:bg-white focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 border border-gray-400 text-black disabled:bg-emerald-300 disabled:shadow-none">
+                <span>2</span>
+              </button>
+              <button className="inline-flex h-10 items-center justify-center gap-2 whitespace-nowrap bg-white px-5 text-2xl font-normal tracking-wide text-black transition duration-300 hover:bg-blue-600 focus:bg-blue-700 focus-visible:outline-none disabled:cursor-not-allowed hover:text-white border border-gray-400 rounded-r disabled:border-gray-400 disabled:bg-emerald-300 disabled:shadow-none">
+                <span>+</span>
+              </button>
+            </div>
+          )}
+          <div>{!isDisabled && <ProductButton name="But Now" />}</div>
+          <div>{!isDisabled && <CardButton name={<FaRegHeart />} />}</div>
         </div>
         <DeliveryInfo />
       </div>

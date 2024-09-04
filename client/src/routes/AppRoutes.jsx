@@ -11,6 +11,7 @@ import AccountScreen from "../components/pages/AccountScreen";
 import Product from "../components/pages/Product";
 import ProductDetailsScreen from "../components/pages/ProductDetailsScreen";
 import ForgotPassword from "../components/pages/ForgotPassword";
+import DashboardScreen from "../components/pages/DashboardScreen";
 
 const AppRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const AppRoutes = () => {
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/account" element={<AccountScreen />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/dashboard" element={<DashboardScreen />} />
           </Route>
         </Routes>
       </Router>

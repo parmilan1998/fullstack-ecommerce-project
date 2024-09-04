@@ -20,11 +20,31 @@ const userSchema = new Schema(
     role: {
       type: String,
       default: "user",
-      enum: ["user", "admin", "employee"],
+      enum: ["user", "admin"],
     },
     avatar: {
       type: String,
       default: "../../public/avatar.png",
+    },
+    lastLogin: {
+      type: Date,
+      default: Date.now,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
+    },
+    resetPasswordToken: {
+      type: String,
+    },
+    resetPasswordExpiresAt: {
+      type: Date,
+    },
+    verificationToken: {
+      type: String,
+    },
+    verificationTokenExpiresAt: {
+      type: Date,
     },
   },
   {
