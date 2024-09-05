@@ -18,10 +18,13 @@ const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-  const role = useSelector((state) => state.user.role);
-  const isDisabled = role === "admin";
+  const { isAuthenticated, user } = useSelector((state) => state.user);
+
+  const verify = user ? user.isVerified : null;
+  const userRole = user ? user.role : null;
+  const isDisabled = userRole === "admin";
 
   const handleLogout = async () => {
     const result = await Swal.fire({
@@ -36,15 +39,15 @@ const Header = () => {
         title: "text-xl font-semibold text-gray-800 font-poppins",
         content: "text-gray-600 font-poppins text-sm ",
         confirmButton:
-          "bg-blue-500 hover:bg-blue-600 text-white text-sm  py-2 px-4 rounded font-poppins",
+          "bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded font-poppins",
         cancelButton:
-          "bg-red-500 hover:bg-red-600 text-white text-sm  py-2 px-4 rounded ml-2 font-poppins",
+          "bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded ml-2 font-poppins",
       },
     });
 
     if (result.isConfirmed) {
       try {
-        await dispatch(logoutUser());
+        await dispatch(logoutUser()).unwrap();
         dispatch(logout());
         toast.success("Logout Successfully!");
       } catch (error) {
@@ -61,20 +64,20 @@ const Header = () => {
         </Link>
         <div>
           <ul className="md:flex gap-3 hidden">
-            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+            <li className="text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/">Home</Link>
             </li>
-            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+            <li className="text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/contact">Contact</Link>
             </li>
-            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+            <li className="text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/about">About</Link>
             </li>
-            <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+            <li className="text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
               <Link to="/products">Products</Link>
             </li>
-            {role === "admin" && (
-              <li className=" text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
+            {userRole === "admin" && (
+              <li className="text-base tracking-wide cursor-pointer hover:text-gray-500 font-normal hover:underline">
                 <Link to="/dashboard">Dashboard</Link>
               </li>
             )}
@@ -96,12 +99,12 @@ const Header = () => {
               </div>
             )}
 
-            {user ? (
+            {isAuthenticated && verify === true ? (
               <button
                 onClick={handleLogout}
                 className="flex items-center text-sm gap-2"
               >
-                logout
+                Logout
               </button>
             ) : (
               <div className="flex justify-center items-center">
@@ -117,11 +120,7 @@ const Header = () => {
           </button>
         </div>
       </nav>
-      {isOpen && (
-        <>
-          <ToggleMenu setIsOpen={setIsOpen} />
-        </>
-      )}
+      {isOpen && <ToggleMenu setIsOpen={setIsOpen} />}
       <hr />
     </div>
   );

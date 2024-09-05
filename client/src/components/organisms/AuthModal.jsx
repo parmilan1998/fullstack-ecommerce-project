@@ -17,7 +17,12 @@ const LoginModal = ({ AuthForm }) => {
       <button className="text-sm" onClick={showModal}>
         Log In
       </button>
-      <Modal open={isModalOpen} onCancel={handleCancel} footer={null}>
+      <Modal
+        open={isModalOpen}
+        onCancel={handleCancel}
+        footer={null}
+        maskClosable={false}
+      >
         <AuthForm setIsModalOpen={setIsModalOpen} />
       </Modal>
     </div>

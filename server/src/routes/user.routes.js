@@ -18,7 +18,7 @@ const router = express.Router();
 
 router.post("/register", userUpload.single("avatar"), registerUser);
 router.post("/login", loginUser);
-router.post("/logout", protect, logoutUser);
+router.post("/logout", logoutUser);
 router.post("/verify-email", verifyEmail);
 router.post("/forgot-password", forgotPassword);
 router.post("/reset-password/:resettoken", resetPassword);

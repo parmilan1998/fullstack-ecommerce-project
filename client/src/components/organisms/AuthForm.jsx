@@ -40,7 +40,7 @@ const AuthForm = ({ setIsModalOpen }) => {
             {isLogin && (
               <div>
                 <Link
-                  to="/forgot-password"
+                  to="/reset-password"
                   className="text-sm text-red-500 hover:underline hover:text-red-500 font-normal ease-in duration-200"
                 >
                   Forgot Password?
