@@ -12,6 +12,7 @@ import Product from "../components/pages/Product";
 import ProductDetailsScreen from "../components/pages/ProductDetailsScreen";
 import ForgotPassword from "../components/pages/ForgotPassword";
 import DashboardScreen from "../components/pages/DashboardScreen";
+import ResetPassword from "../components/pages/ResetPassword";
 
 const AppRoutes = () => {
   return (
@@ -32,6 +33,7 @@ const AppRoutes = () => {
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/dashboard" element={<DashboardScreen />} />
           </Route>
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </Router>
     </>
