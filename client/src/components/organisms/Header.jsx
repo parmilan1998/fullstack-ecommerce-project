@@ -28,20 +28,20 @@ const Header = () => {
 
   const handleLogout = async () => {
     const result = await Swal.fire({
-      title: "Are you sure?",
-      text: "You will be logged out!",
+      title: "Are you sure you want to logged out?",
+      // text: "Are you sure you want to logged out?",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, log me out!",
       customClass: {
-        popup: "rounded-lg shadow-lg bg-white p-6 font-poppins",
-        title: "text-xl font-semibold text-gray-800 font-poppins",
-        content: "text-gray-600 font-poppins text-sm ",
+        popup: "rounded-lg shadow-lg bg-white w-96 pt-3 font-poppins",
+        title: "text-sm font-normal text-gray-700 font-poppins",
+        text: "text-gray-600 font-poppins text-sm ",
         confirmButton:
-          "bg-blue-500 hover:bg-blue-600 text-white text-sm py-2 px-4 rounded font-poppins",
+          "bg-blue-500 hover:bg-blue-600 text-white text-xs py-2 w-32 rounded font-poppins",
         cancelButton:
-          "bg-red-500 hover:bg-red-600 text-white text-sm py-2 px-4 rounded ml-2 font-poppins",
+          "bg-red-500 hover:bg-red-600 text-white text-xs py-2 w-32 rounded ml-2 font-poppins",
       },
     });
 

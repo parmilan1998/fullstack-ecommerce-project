@@ -12,7 +12,6 @@ export const registerUser = createAsyncThunk("/user/register", async (data) => {
 export const loginUser = createAsyncThunk("/user/login", async (data) => {
   const res = await axios.post(`${apiUrl}/api/v1/user/login`, data);
   localStorage.setItem("token", res.data.token);
-  console.log(res.data);
   return res.data;
 });
 
@@ -40,7 +39,7 @@ const userSlice = createSlice({
       state.user = null;
       state.isAuthenticated = false;
     },
-    register: (state, action) => {
+    registered: (state, action) => {
       state.user = action.payload.user;
       state.isAuthenticated = true;
     },
@@ -48,4 +47,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { login, logout, register } = userSlice.actions;
+export const { login, logout, registered } = userSlice.actions;
