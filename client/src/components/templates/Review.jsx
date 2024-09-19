@@ -1,56 +1,57 @@
-import React from "react";
-import ReviewCard from "../organisms/ReviewCard";
-import Title from "../atoms/Title";
-import { Link } from "react-router-dom";
-import ButtonRounded from "../atoms/ButtonRounded";
-import ReviewForm from "../organisms/AddReviewSection";
-import { useSelector } from "react-redux";
+import React from 'react'
+import ReviewCard from '../organisms/ReviewCard'
+import Title from '../atoms/Title'
+import { Link } from 'react-router-dom'
+import ButtonRounded from '../atoms/ButtonRounded'
+import ReviewForm from '../organisms/AddReviewSection'
+import { useSelector } from 'react-redux'
 
 const Review = () => {
-  const role = useSelector((state) => state.user.role);
-  const isDisabled = role === "admin";
+  const { user } = useSelector((state) => state.user)
+  const userRole = user ? user.role : null
+  const isDisabled = userRole === 'admin'
 
   const reviewsInfo = [
     {
       id: 1,
-      customer: "John Doe",
-      title: "Customer",
+      customer: 'John Doe',
+      title: 'Customer',
       review:
-        "This product is amazing! I bought it for my dog and it has been so much fun!",
+        'This product is amazing! I bought it for my dog and it has been so much fun!',
       rating: 5,
     },
     {
       id: 2,
-      customer: "Jane Smith",
-      title: "Customer",
+      customer: 'Jane Smith',
+      title: 'Customer',
       review:
-        "I absolutely love this product! I use it every day to keep my dog healthy and happy.",
+        'I absolutely love this product! I use it every day to keep my dog healthy and happy.',
       rating: 4,
     },
     {
       id: 3,
-      customer: "David Johnson",
-      title: "Customer",
+      customer: 'David Johnson',
+      title: 'Customer',
       review:
-        "I have no doubt this product will help my dog become even more healthy and happy.",
+        'I have no doubt this product will help my dog become even more healthy and happy.',
       rating: 3,
     },
     {
       id: 4,
-      customer: "Sarah Wilson",
-      title: "Customer",
+      customer: 'Sarah Wilson',
+      title: 'Customer',
       review:
         "I can't wait to see what else this product can offer for my dog!",
       rating: 5,
     },
-  ];
+  ]
   return (
     <div>
-      <section className="font-poppins lg:mx-auto md:mx-16 mx-4">
-        <div className="mx-auto py-6 lg:pl-3 lg:pr-8 lg:py-10">
-          <div className="md:flex md:items-end md:justify-between">
-            <div className="flex">
-              <Title props="Reviews from our customers" />
+      <section className='font-poppins lg:mx-auto md:mx-16 mx-4'>
+        <div className='mx-auto py-6 lg:pl-3 lg:pr-8 lg:py-10'>
+          <div className='md:flex md:items-end md:justify-between'>
+            <div className='flex'>
+              <Title props='Reviews from our customers' />
               {/* <ButtonRounded name="Write a customer review" /> */}
             </div>
             {/* <Link
@@ -76,7 +77,7 @@ const Review = () => {
             {/* <ButtonRounded name="Write a customer review" /> */}
             {!isDisabled && <ReviewForm />}
           </div>
-          <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className='mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4'>
             {reviewsInfo.map((item) => (
               <ReviewCard key={item.id} {...item} />
             ))}
@@ -84,7 +85,7 @@ const Review = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}
 
-export default Review;
+export default Review
