@@ -32,17 +32,12 @@ const AppRoutes = () => {
             <Route path='products/:id' element={<ProductDetailsScreen />} />
             <Route path='account' element={<AccountScreen />} />
           </Route>
-
           <Route path='/reset-password' element={<ResetPassword />} />
           <Route path='/verification' element={<VerificationScreen />} />
 
-          {/* Dashboard Routes  */}
           <Route path='/dashboard' element={<DashboardLayout />}>
             <Route index element={<DashboardScreen />} />
-            <Route
-              path='/dashboard/products'
-              element={<ProductScreenAD />}
-            />
+            <Route path='/dashboard/products' element={<ProductScreenAD />} />
           </Route>
         </Routes>
       </Router>
